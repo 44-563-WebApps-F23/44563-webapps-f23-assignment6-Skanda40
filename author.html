@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            JS Hands-on
+        </title>
+    </head>
+ 
+<body>
+<h1>Author entry Skanda Shreekar Sira Prabhakar</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_age">The hidden author name </label>
+    <input type ="password" id="Dickens" name="form1_age" value="Dickens"> <br>
+
+    <label for="form1_nick">Guess the author </label>
+    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="checkAuthor()" value="Check the guess">
+</form>
+
+<p id="result">The result</p>
+
+<div>
+    <img id="pic" src="Paris.jpg" alt="Paris" height="100px" width="100px"  onclick="selectImage()">
+</div>
+
+<script> 
+    let good=0
+    let  oops=0
+function checkAuthor (){
+    console.log("Getting form values")
+    age = document.getElementById("Dickens").value
+    nick = document.getElementById("form1_nick").value
+    
+    out = document.getElementById("result")
+    if(age==nick){
+        out.innerHTML = "You got it right"
+        good++
+    } else {
+        out.innerHTML = "Sorry"
+        oops++
+    }
+    out.innerHTML="Count"+good 
+}
+
+    let useImage=1;
+
+function selectImage (){
+
+    let pic=document.getElementById("pic");
+    
+    switch(useImage){
+        case 1:
+            pic.src="Paris.jpg";
+            useImage++;
+            break;
+
+        case 2:
+            pic.src="rome.jpg";
+            useImage++;
+            break;
+
+        case 3:
+            pic.src="seattle.jpg";
+            useImage=1;
+            break;
+
+        default:
+            break;
+    }
+}
+
+
+
+
+</script>
+
+</body>
+</html> 
