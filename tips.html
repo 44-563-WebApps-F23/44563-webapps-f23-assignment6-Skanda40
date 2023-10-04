@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tips</title>
+    </head>
+ 
+<body>
+
+<h2>Skanda Shreekar Sira Prabhakar shows tip amounts</h2>
+
+
+<form>
+    <label for="baseAmount">Enter the base amount</label>
+    <input type ="number" id="baseAmount" value=50> <br>
+
+    <label for="tipPercent">Enter the tip percent</label>
+    <input type ="number" id="tipPercent" value=15> <br>
+
+    <button type="button" onclick="tips()">Show tip</button>
+    <p id="result"></p>
+</form>
+<br>
+ <form>
+    <input type="radio" name="operation" value="sum" onclick="chooseOp()">
+    <label for="sum">Sum</label></br>
+  
+    <input type="radio" name="operation"  value="difference" onclick="chooseOp()">
+    <label for="diff">Difference</label></br>
+  
+    <input type="radio" name="operation" value="product" onclick="chooseOp()">
+    <label for="mult">Product</label></br>
+
+    <p id="operationResult"></p>
+  </form>
+
+
+<script> 
+
+function tips(){
+    let baseAmount = parseFloat(document.getElementById("baseAmount").value);
+    let tipPercent = parseFloat(document.getElementById("tipPercent").value);
+
+    let myOutput='';
+    var toShow = "";
+ 
+    for(let i=0;i<5;i++){
+        tipValue=tipPercent+i*4;
+        calculatedTip=(((baseAmount*tipValue))/100).toFixed(1);
+        console.log(calculatedTip)
+        toShow += tipPercent+i*4 +"% is "+calculatedTip+"; ";
+    
+    }
+    document.getElementById("result").innerHTML = toShow;
+}
+
+
+ function chooseOp(){
+    const baseAmount = parseFloat(document.getElementById("baseAmount").value);
+    const tipPercent = parseFloat(document.getElementById("tipPercent").value);
+    let choosenOperation=document.querySelector('input[name="operation"]:checked').value;
+
+    let output='';
+
+    switch(choosenOperation){
+        case "sum":
+        output=baseAmount+ tipPercent;
+        break;
+
+        case "difference":
+        output=baseAmount-tipPercent;
+        break;
+
+        case "product":
+        output=baseAmount*tipPercent;
+        break;
+
+        default:
+        break;
+    }
+    operationResult=`${choosenOperation} of ${baseAmount} and ${tipPercent} is ${output}`;
+    document.getElementById("operationResult").innerHTML = operationResult;
+
+ }
+</script>
+
+</body>
+</html> 
