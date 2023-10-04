@@ -4,7 +4,8 @@ Introduction to Java Script and DOM
 
 Author hosted at https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Skanda40/author.html
 
-br
+
 Tips hosted at https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Skanda40/tips.html
-br
+
+
 Cruise hosted at https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Skanda40/cruise
